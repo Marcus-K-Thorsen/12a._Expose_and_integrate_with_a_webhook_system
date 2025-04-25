@@ -1,3 +1,12 @@
+## Introduction
+
+This project is part of the **12a Expose and Integrate with a Webhook System** assignment. The file [`Webhook System Rapport.pdf`](./Webhook_System_Rapport.pdf) serves as the detailed report explaining how to use this system. It provides comprehensive documentation for the webhook system, including how to register, unregister, and test webhooks, as well as how to integrate them into your own system.
+
+If you are looking for guidance on how to use this system, please refer to the report:  
+**[Webhook System Rapport.pdf](./Webhook_System_Rapport.pdf)**
+
+---
+
 ## Available Events
 The following events are available for webhook registration:
 
