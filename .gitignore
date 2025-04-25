@@ -25,3 +25,6 @@ Thumbs.db
 # Local testing files
 *.sqlite3
 *.db
+
+# Webhook data file
+webhook_user_notification_service/app/database_management/webhook_data.json
