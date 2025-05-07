@@ -46,7 +46,7 @@ class PingedWebhooks(BaseModel):
     successful_webhooks_count: int = Field(
         default=0, 
         description="The number of webhooks that were successfully pinged and returned a 2xx status code.", 
-        example=2
+        examples=[2]
     )
     
     successful_webhooks: List[Dict[str, Any]] = Field(
@@ -74,7 +74,7 @@ class PingedWebhooks(BaseModel):
     failed_webhooks_count: int = Field(
         default=0, 
         description="The number of webhooks that failed to be pinged due to HTTP errors or network issues.", 
-        example=2
+        examples=[2]
     )
     
     failed_webhooks: List[Dict[str, Any]] = Field(

@@ -43,7 +43,7 @@ class SendMessageResponse(SendMessageRequest):
     received_at: str = Field(
         default_factory=lambda: datetime.now(timezone.utc).isoformat(),
         description="The timestamp when the message was received.",
-        example="2023-10-01T12:00:00Z"
+        example="2025-05-07T04:03:10.779082+00:00"
     )
 
 
@@ -71,5 +71,5 @@ class UserResponse(UserRequest):
     registered_at: str = Field(
         default_factory=lambda: datetime.now(timezone.utc).isoformat(),
         description="The timestamp when the user was registered.",
-        example="2023-10-01T12:00:00Z"
+        example="2025-05-07T04:03:10.779082+00:00"
     )
