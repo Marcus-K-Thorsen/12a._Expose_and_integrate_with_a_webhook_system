@@ -1,9 +1,8 @@
 import requests
-from time import sleep
 
 
-exposee_base_url = "http://127.0.0.1:8000"
-integrator_base_url = "http://127.0.0.1:8001"
+exposee_base_url = "https://e1de-85-82-70-165.ngrok-free.app"
+integrator_base_url = "https://integrator-webhook.loca.lt"
 
 # Subscribe the consumer server to webhook events
 subscriptions = [
@@ -21,33 +20,8 @@ def register_webhooks():
         else:
             print(f"Failed to register webhook: {response.status_code}, {response.text}")
 
-def simulate_event(event_type: str):
-    response = requests.post(f"{exposee_base_url}/simulate-event", json={"event_type": event_type})
-    if response.ok:  # Check if the response status code is 200-299
-        print(f"Simulate event response: {response.status_code}, {response.json()}")
-    else:
-        print(f"Failed to simulate event: {response.status_code}, {response.text}")
-        
-def simulate_events():
-    # Simulate a payment received event
-    simulate_event("payment_received")
-    sleep(1)  # Wait for a second
 
-    # Simulate a payment processed event
-    simulate_event("payment_processed")
-    sleep(2)  # Wait for two seconds
-
-    # Simulate an invoice processing event
-    simulate_event("invoice_processing")
-    sleep(3)  # Wait for three seconds
-
-    # Simulate an invoice completed event
-    simulate_event("invoice_completed")
-    sleep(1)  # Wait for a second
 
 if __name__ == "__main__":
-    # Register webhooks
     register_webhooks()
 
-    # Simulate events
-    #simulate_events()

@@ -1,5 +1,5 @@
-from fastapi import APIRouter, HTTPException, Query, status
-from typing import Optional, List
+from fastapi import APIRouter, HTTPException, Query
+from typing import List
 
 from database_management import trigger_webhooks
 
