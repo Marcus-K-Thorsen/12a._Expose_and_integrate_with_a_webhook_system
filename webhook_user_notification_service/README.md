@@ -21,7 +21,7 @@ Project will be running on http://127.0.0.1:8000
 Remember to have the project running on http://127.0.0.1:8000 and use this command:
 
 ```bash
-$ lt --port 8000 --subdomain my-custom-subdomain
+$ lt -l 127.0.0.1 --port 8000 --subdomain my-custom-subdomain
 ```
 
 The project will be accessible to the url: https://my-custom-subdomain.loca.lt

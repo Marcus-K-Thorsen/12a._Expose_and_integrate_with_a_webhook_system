@@ -60,7 +60,7 @@ The guide for the webhook exposee project can be found here: [**Webhook Integrat
 ```bash
    $ cd webhook_receiver
    $ poetry run python main.py
-   $ lt --port 8001 --subdomain my-custom-subdomain
+   $ lt -l 127.0.0.1 --port 8001 --subdomain my-custom-subdomain
 ```
 
 3. **Access the Webhook Receiver**:

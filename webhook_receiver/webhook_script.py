@@ -27,18 +27,27 @@ def simulate_event(event_type: str):
         print(f"Simulate event response: {response.status_code}, {response.json()}")
     else:
         print(f"Failed to simulate event: {response.status_code}, {response.text}")
+        
+def simulate_events():
+    # Simulate a payment received event
+    simulate_event("payment_received")
+    sleep(1)  # Wait for a second
+
+    # Simulate a payment processed event
+    simulate_event("payment_processed")
+    sleep(2)  # Wait for two seconds
+
+    # Simulate an invoice processing event
+    simulate_event("invoice_processing")
+    sleep(3)  # Wait for three seconds
+
+    # Simulate an invoice completed event
+    simulate_event("invoice_completed")
+    sleep(1)  # Wait for a second
 
 if __name__ == "__main__":
     # Register webhooks
     register_webhooks()
 
-    # Simulate an event (example: payment_received)
-    simulate_event("payment_received")
-    sleep(1)  # Wait for a second
-    simulate_event("payment_processed")
-    sleep(2)  # Wait for two seconds
-    simulate_event("invoice_processing")
-    sleep(3)  # Wait for three seconds
-    simulate_event("invoice_completed")
-    sleep(1)  # Wait for a second
-    simulate_event("payment_received")
+    # Simulate events
+    #simulate_events()
