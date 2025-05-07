@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Received Webhook Events</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Webhook Dashboard</h1>
+            <nav>
+                <button onclick="window.location.href='/received-events'">All Events</button>
+                <button onclick="window.location.href='/received-events?event_filter=payment_received'">Payment Received</button>
+                <button onclick="window.location.href='/received-events?event_filter=payment_processed'">Payment Processed</button>
+                <button onclick="window.location.href='/received-events?event_filter=invoice_processing'">Invoice Processing</button>
+                <button onclick="window.location.href='/received-events?event_filter=invoice_completed'">Invoice Completed</button>
+            </nav>
+        </header>
+        <main>
+            <h2>Received Webhook Events</h2>
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <th>Event Type</th>
+                        <th>Data</th>
+                        <th>Received At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for event in events %}
+                        <tr>
+                            <td>{{ event.event_type }}</td>
+                            <td><pre>{{ event.data | default({}) | tojson }}</pre></td>
+                            <td>{{ event.received_at }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+</html>
