@@ -1,15 +1,15 @@
 import requests
 
 
-exposee_base_url = "https://e1de-85-82-70-165.ngrok-free.app"
+exposee_base_url = "https://424e-85-82-70-165.ngrok-free.app"
 integrator_base_url = "https://integrator-webhook.loca.lt"
 
 # Subscribe the consumer server to webhook events
 subscriptions = [
-    {"event_type": "payment_received", "url": f"{integrator_base_url}/webhook"},
-    {"event_type": "payment_processed", "url": f"{integrator_base_url}/webhook"},
-    {"event_type": "invoice_processing", "url": f"{integrator_base_url}/webhook"},
-    {"event_type": "invoice_completed", "url": f"{integrator_base_url}/webhook"}
+    {"event": "payment_received", "url": f"{integrator_base_url}/webhook"},
+    {"event": "payment_processed", "url": f"{integrator_base_url}/webhook"},
+    {"event": "invoice_processing", "url": f"{integrator_base_url}/webhook"},
+    {"event": "invoice_completed", "url": f"{integrator_base_url}/webhook"}
 ]
 
 def register_webhooks():

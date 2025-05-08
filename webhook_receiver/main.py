@@ -33,7 +33,7 @@ async def webhook_endpoint(request: Request):
     payload: Dict = await request.json()
     print(f"Received webhook payload: {payload}")
     
-    event_type = payload.get("event_type", "unknown")
+    event_type = payload.get("event", "unknown")
     event_data = payload.get("data", {})
     event = {
         "event_type": event_type,
